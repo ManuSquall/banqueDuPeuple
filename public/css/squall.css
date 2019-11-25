@@ -1,0 +1,11 @@
+html, body{
+    height: 100%;
+}
+
+.squall{
+    background-color: aqua;
+}
+
+.squall_main{
+    background-image: url('../img/img_bg_1.jpg');
+}
