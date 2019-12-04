@@ -8,6 +8,7 @@ require_once "../model/client_db.php";
 
 $liste_client=getclients();
 $num_compte = generer_num_cpt();
+echo $num_compte;
 
 
 

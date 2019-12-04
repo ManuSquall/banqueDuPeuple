@@ -27,7 +27,10 @@ function nbr_compte(){
 
 function generer_num_cpt(){
 
-   return $numero = 'CT-'.date("dmY",time()).'-'.(nbr_compte()[0]+1);
+    $i=intval(nbr_compte()[0]);
+    $table= getcomptes();
+    //on le concatène au dernier id
+   return $numero = 'CT-'.date("dmY-his",time()).'-'.($table[$i-1])[0];
 }
 
 ?>
