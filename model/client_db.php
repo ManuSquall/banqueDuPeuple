@@ -46,5 +46,12 @@ function del_client($id){
     return $db->prepare($sql)->execute();
 }
 
+function del_all_compte_by_id_client($id_client){
+    global $db;
+
+    $sql= "delete from compte where id_client=".$id_client.";";
+    return $db->prepare($sql)->execute();
+}
+
 
 ?>

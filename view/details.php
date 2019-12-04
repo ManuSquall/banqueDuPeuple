@@ -4,11 +4,20 @@
 <?php
 session_start();
 
-require_once "../model/client_db.php";
+require_once "../model/compte_db.php";
 require_once "../model/admin_db.php";
+require_once "../model/client_db.php";
+
+if(isset($_GET['idDet'])){
+    $liste_compte_client=getcomptebyid_client($_GET['idDet']);
+    $client = getclientbyid($_GET['idDet']);
 
 
-$liste_client=getclients();
+}else{
+    header('location:client.php');
+}
+
+
 
 
 
@@ -40,7 +49,7 @@ $liste_client=getclients();
                 <br>
                 <ul class="navbar-nav nav-justified">
                    
-                    <li class="nav-item"><a href="ad_client.php" class="btn btn-primary">AJOUTER CLIENT</a></li>
+                    <li class="nav-item"><a href="ad_compte.php" class="btn btn-primary">AJOUTER COMPTE</a></li>
                     <li class="nav-item"><a href="accueil.php" class="btn btn-primary">RETOUR</a></li>
                     
                 </ul>
@@ -59,39 +68,40 @@ $liste_client=getclients();
             <div class="row">
                 <div class="col-md-10 offset-md-1">
 
-                    <h3>Liste des clients </h3>
+                    <h3>Liste des comptes de <?=$client['nom_client']?> <?=$client['prenom_client']?> </h3>
                     <hr>
                     <!-- ############################# -->
 
 
                     <table class="table table-borderless">
                         <thead class="thead-light">
-                            <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>Adresse</th>
                             <th>Numero</th>
+                            <th>Solde</th>
+                            <th>Nom Client</th>
+                            <th>Prenom Client</th>
                             <th>Détails</th>
                         </thead>
                         <tbody>
-                           <!-- A afficher si aucun client n'a été créé -->
-                           <?php if(count($liste_client)==0) { ?>
+
+                        <!-- A afficher si aucun compte n'a été créé -->
+                        <?php if(count($liste_compte_client)==0) { ?>
                             <tr>
                                 <td class="font-italic text-center" colspan="5">
-                                    Aucun client n'a été ajouté!
+                                    Aucun compte n'a été créé pour <?=$client['nom_client']?> <?=$client['prenom_client']?> !
                                 </td>
                             </tr>
                             <?php } ?>
+                          
 
-                            <?php foreach ($liste_client as $c) { ?>
+                            <?php foreach ($liste_compte_client as $c) { ?>
                                 <tr>
-                                <td> <?=$c['nom_client']?> </td>
-                                <td> <?=$c['prenom_client']?> </td>
-                                <td> <?=$c['adresse_client']?> </td>
-                                <td> <?=$c['numero_client']?> </td>
+                                <td> <?=$c['num_compte']?> </td>
+                                <td> <?=$c['solde_compte']?> </td>
+                                <td> <?=(getclientbyid($c['id_client']))[1]?> </td>
+                                <td> <?=(getclientbyid($c['id_client']))[2]?> </td>
                                 <td>
-                                    <a href="details.php?idDet=<?=$c['id_client']?>" class="btn btn-sm btn-success text-white squall"><i class="fa fa-edit"></i>Compte(s)</a>
-                                    <a href="edit_client.php?idEdit=<?=$c['id_client']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
-                                    <a href="../controller/ctrl_client.php?idSup=<?=$c['id_client']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
+                                    <a href="edit_compte.php?idEdit=<?=$c['id_compte']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
+                                    <a href="../controller/ctrl_compte.php?idSup=<?=$c['id_compte']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
                                 </td>
                             </tr>
                             <?php } ?>

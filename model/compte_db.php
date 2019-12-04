@@ -34,6 +34,15 @@ function getcomptebyid($id){
 
 }
 
+function getcomptebyid_client($id_client){
+
+    global $db;
+
+    $sql= "select * from compte where id_client = ".$id_client;
+    return $db->query($sql)->fetchAll();
+
+}
+
 
 function updatecompte($id, $solde, $id_client){
     global $db;

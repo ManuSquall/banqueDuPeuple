@@ -33,6 +33,9 @@ if (isset($_POST['update']) && isset($_POST['id'])){
 if(isset($_GET['idSup'])){
 
     $id=$_GET['idSup'];
+    // on supprime tous les comptes du client
+    del_all_compte_by_id_client($id);
+    // puis on supprime le client
     del_client($id);
 
     header('location:../view/client.php');
