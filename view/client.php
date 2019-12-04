@@ -89,9 +89,9 @@ $liste_client=getclients();
                                 <td> <?=$c['adresse_client']?> </td>
                                 <td> <?=$c['numero_client']?> </td>
                                 <td>
-                                    <a href="#?idEdit=<?=$c['id']?>" class="btn btn-sm btn-success text-white squall"><i class="fa fa-edit"></i>Compte(s)</a>
-                                    <a href="#?idSup=<?=$c['id']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
-                                    <a href="#?idSup=<?=$c['id']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
+                                    <a href="#?idModif=<?=$c['id_client']?>" class="btn btn-sm btn-success text-white squall"><i class="fa fa-edit"></i>Compte(s)</a>
+                                    <a href="edit_client.php?idEdit=<?=$c['id_client']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
+                                    <a href="../controller/ctrl_client.php?idSup=<?=$c['id_client']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
                                 </td>
                             </tr>
                             <?php } ?>

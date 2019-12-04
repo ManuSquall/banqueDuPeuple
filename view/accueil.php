@@ -51,7 +51,7 @@ require_once "../model/admin_db.php";
                         <a href="client.php" class="btn btn-primary ">GESTION DES CLIENTS</a>
                     </div>
                     <div class="panel col-md-5 col-sm-5 col-lg-5 bg-info main">
-                    <a href="#" class="btn btn-primary"> GESTION DES COMPTES</a>
+                    <a href="comptes.php" class="btn btn-primary"> GESTION DES COMPTES</a>
                     </div>
                 </div>
 

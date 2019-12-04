@@ -4,6 +4,12 @@
 <?php
 session_start();
 require_once "../model/admin_db.php";
+require_once "../model/client_db.php";
+
+
+if ($_GET['idEdit']){
+    $old_client = getclientbyid($_GET['idEdit']);
+}
 
 ?>
 
@@ -51,7 +57,7 @@ require_once "../model/admin_db.php";
             <div class="row">
                 <div class="col-md-10 offset-md-1">
 
-                    <h3>Ajouter un client </h3>
+                    <h3>Modifier un client </h3>
                     <hr>
                     <!-- ############################# -->
 
@@ -60,23 +66,25 @@ require_once "../model/admin_db.php";
             
             <div class="form-group">
                 <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom" class="form-control" required>
+                <input type="text" name="nom" id="nom" class="form-control" placeholder="<?=$old_client[1]?>" required>
             </div>
             <div class="form-group">
                 <label for="prenom">Prenom</label>
-                <input type="text" name="prenom" id="prenom" class="form-control" required>
+                <input type="text" name="prenom" id="prenom" class="form-control" placeholder="<?=$old_client[2]?>" required>
             </div>
             <div class="form-group">
                 <label for="adresse">Adresse</label>
-                <input type="adresse" name="adresse" id="adresse" class="form-control" required>
+                <input type="adresse" name="adresse" id="adresse" class="form-control" placeholder="<?=$old_client[3]?>" required>
             </div>
             <div class="form-group">
                 <label for="numero">Numero</label>
-                <input type="text" name="numero" id="numero" class="form-control" required>
+                <input type="text" name="numero" id="numero" class="form-control" placeholder="<?=$old_client[4]?>" required>
             </div>
             <hr>
             <div>
-                <button name="save" type="submit" class="btn btn-secondary">AJOUTER</button>
+                <button name="update" type="submit" class="btn btn-secondary">Modifier</button>
+                <!-- pour envoyer l'id -->
+                <input type="hidden" name="id" value="<?=$old_client[0]?>"/>
                 
             </div>
         </form>

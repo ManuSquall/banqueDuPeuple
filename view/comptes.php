@@ -3,6 +3,16 @@
 
 <?php
 session_start();
+
+require_once "../model/compte_db.php";
+require_once "../model/admin_db.php";
+require_once "../model/client_db.php";
+
+
+$liste_compte=getcomptes();
+
+
+
 ?>
 
 <head>
@@ -23,15 +33,17 @@ session_start();
             <nav class="col-md-2 col-sm-2 col-lg-2 nav bg-light justify-content-center">
 
                 <h3>Bienvenue <?=$_SESSION['login']?></h3>
+                <br>
+                    <p> <b><u> Nombre de clients:</u> <?=nbr_client()[0]?></b></p>
+                <br>
+                <br>
+                    <p><b><u>Nombre de comptes:</u> <?=nbr_compte()[0]?></b></p>
+                <br>
                 <ul class="navbar-nav nav-justified">
-                    <li class="nav-item"><a href="#" class="btn btn-primary">ACCUEIL</a></li>
-                    <li class="nav-item"><a href="#" class="btn btn-primary">INSCRIPTION</a></li>
-                    <li class="nav-item"><a href="#" class="btn btn-primary">SE CONNECTER</a></li>
-                    <li class="nav-item"><a href="#" class="btn btn-primary">INFO</a></li>
-                    <li class="nav-item"><a href="#" class="btn btn-primary">INFO</a></li>
-                    <li class="nav-item"><a href="#" class="btn btn-primary">INFO</a></li>
-                    <li class="nav-item"><a href="#" class="btn btn-primary">INFO</a></li>
-                    <li class="nav-item"><a href="#" class="btn btn-primary">INFO</a></li>
+                   
+                    <li class="nav-item"><a href="ad_compte.php" class="btn btn-primary">AJOUTER COMPTE</a></li>
+                    <li class="nav-item"><a href="accueil.php" class="btn btn-primary">RETOUR</a></li>
+                    
                 </ul>
             </nav>
 
@@ -42,14 +54,67 @@ session_start();
 
                 </nav>
                 <br>
-                <div class="row main">
-                    <div class="panel col-md-5 col-sm-5 col-lg-5 bg-info main">
-                        <a href="#" class="btn btn-primary ">GESTION DES CLIENTS</a>
-                    </div>
-                    <div class="panel col-md-5 col-sm-5 col-lg-5 bg-info main">
-                    <a href="#" class="btn btn-primary"> GESTION DES COMPTES</a>
-                    </div>
+                <!-- ####################################################### -->
+
+                <div class="container bg-info">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+
+                    <h3>Liste des comptes </h3>
+                    <hr>
+                    <!-- ############################# -->
+
+
+                    <table class="table table-borderless">
+                        <thead class="thead-light">
+                            <th>Numero</th>
+                            <th>Solde</th>
+                            <th>Nom Client</th>
+                            <th>Prenom Client</th>
+                            <th>Détails</th>
+                        </thead>
+                        <tbody>
+
+                        <!-- A afficher si aucun compte n'a été créé -->
+                        <?php if(count($liste_compte)==0) { ?>
+                            <tr>
+                                <td class="font-italic text-center" colspan="5">
+                                    Aucun compte n'a été créé!
+                                </td>
+                            </tr>
+                            <?php } ?>
+                          
+
+                            <?php foreach ($liste_compte as $c) { ?>
+                                <tr>
+                                <td> <?=$c['num_compte']?> </td>
+                                <td> <?=$c['solde_compte']?> </td>
+                                <td> <?=(getclientbyid($c['id_client']))[1]?> </td>
+                                <td> <?=(getclientbyid($c['id_client']))[2]?> </td>
+                                <td>
+                                    <a href="edit_compte.php?idEdit=<?=$c['id_compte']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
+                                    <a href="../controller/ctrl_compte.php?idSup=<?=$c['id_compte']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
+                                </td>
+                            </tr>
+                            <?php } ?>
+
+                        </tbody>
+                    </table>
+
+                    <hr>
+
+
+
+                   
+
+                    <!-- ############################# -->
+
                 </div>
+            </div>
+        </div>
+
+
+                <!-- ####################################################### -->
 
             </div>
 

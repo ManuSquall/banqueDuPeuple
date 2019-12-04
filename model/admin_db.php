@@ -1,5 +1,6 @@
 <?php
 require_once 'db.php';
+require_once 'compte_db.php';
 
 function admin_connect($login, $mdp){
 
@@ -22,6 +23,11 @@ function nbr_compte(){
 
     $sql = "select count(*) from compte;";
     return $db->query($sql)->fetch();
+}
+
+function generer_num_cpt(){
+
+   return $numero = 'CT-'.date("dmY",time()).'-'.(nbr_compte()[0]+1);
 }
 
 ?>
