@@ -14,7 +14,7 @@ if (isset($_POST['save'])){
    addclient($nom, $prenom, $adresse, $numero);
 
 
-    header('location:../view/client.php');
+    header('location:client');
 }
 
 if (isset($_POST['update']) && isset($_POST['id'])){
@@ -27,7 +27,7 @@ if (isset($_POST['update']) && isset($_POST['id'])){
 
     updateclient($id, $nom, $prenom, $adresse, $numero);
 
-    header('location:../view/client.php');
+    header('location:client');
 }
 
 if(isset($_GET['idSup'])){
@@ -38,7 +38,7 @@ if(isset($_GET['idSup'])){
     // puis on supprime le client
     del_client($id);
 
-    header('location:../view/client.php');
+    header('location:client');
 
 }
 

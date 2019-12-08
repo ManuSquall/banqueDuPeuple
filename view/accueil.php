@@ -4,15 +4,19 @@
 <?php
 session_start();
 require_once "../model/admin_db.php";
+if(!($_SESSION['login'])){
+    header("location: index");
+}
+
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../public/css/squall.css">
-    <link rel="stylesheet" href="../public/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css">
+    <link rel="stylesheet" href="btpgrid">
+    <link rel="stylesheet" href="btp">
     <title>Banque du peuple</title>
 </head>
 
@@ -32,8 +36,8 @@ require_once "../model/admin_db.php";
                 <br>
                  
                 <ul class="navbar-nav nav-justified">
-                    <li class="nav-item"><a href="#" class="btn btn-primary">LISTE ADMIN</a></li>
-                    <li class="nav-item"><a href="#" class="btn btn-primary">SE DECONNECTER</a></li>
+                    <!-- <li class="nav-item"><a href="#" class="btn btn-primary">LISTE ADMIN</a></li> -->
+                    <li class="nav-item"><a href="connect" class="btn btn-primary">SE DECONNECTER</a></li>
                     <li class="nav-item"><a href="#" class="btn btn-primary">INFO</a></li>
                     
                 </ul>
@@ -48,10 +52,10 @@ require_once "../model/admin_db.php";
                 <br>
                 <div class="row main">
                     <div class="panel col-md-5 col-sm-5 col-lg-5 bg-info main">
-                        <a href="client.php" class="btn btn-primary ">GESTION DES CLIENTS</a>
+                        <a href="client" class="btn btn-primary ">GESTION DES CLIENTS</a>
                     </div>
                     <div class="panel col-md-5 col-sm-5 col-lg-5 bg-info main">
-                    <a href="comptes.php" class="btn btn-primary"> GESTION DES COMPTES</a>
+                    <a href="comptes" class="btn btn-primary"> GESTION DES COMPTES</a>
                     </div>
                 </div>
 

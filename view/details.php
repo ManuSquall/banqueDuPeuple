@@ -3,7 +3,9 @@
 
 <?php
 session_start();
-
+if(!($_SESSION['login'])){
+    header("location: index");
+}
 require_once "../model/compte_db.php";
 require_once "../model/admin_db.php";
 require_once "../model/client_db.php";
@@ -14,7 +16,7 @@ if(isset($_GET['idDet'])){
 
 
 }else{
-    header('location:client.php');
+    header('location:client');
 }
 
 
@@ -27,9 +29,9 @@ if(isset($_GET['idDet'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../public/css/squall.css">
-    <link rel="stylesheet" href="../public/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css">
+    <link rel="stylesheet" href="btpgrid">
+    <link rel="stylesheet" href="btp">
     <title>Banque du peuple</title>
 </head>
 
@@ -50,7 +52,7 @@ if(isset($_GET['idDet'])){
                 <ul class="navbar-nav nav-justified">
                    
                     <li class="nav-item"><a href="ad_compte.php" class="btn btn-primary">AJOUTER COMPTE</a></li>
-                    <li class="nav-item"><a href="accueil.php" class="btn btn-primary">RETOUR</a></li>
+                    <li class="nav-item"><a href="accueil" class="btn btn-primary">RETOUR</a></li>
                     
                 </ul>
             </nav>
@@ -100,8 +102,8 @@ if(isset($_GET['idDet'])){
                                 <td> <?=(getclientbyid($c['id_client']))[1]?> </td>
                                 <td> <?=(getclientbyid($c['id_client']))[2]?> </td>
                                 <td>
-                                    <a href="edit_compte.php?idEdit=<?=$c['id_compte']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
-                                    <a href="../controller/ctrl_compte.php?idSup=<?=$c['id_compte']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
+                                    <a href="modif_cpt-<?=$c['id_compte']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
+                                    <a href="ctrl_cpt-<?=$c['id_compte']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
                                 </td>
                             </tr>
                             <?php } ?>

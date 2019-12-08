@@ -1,0 +1,37 @@
+RewriteEngine on
+
+#  pour les test sans connexions
+# RewriteRule ^.{0}$ view/accueil.php
+
+
+
+#                   Redirection htaccess
+
+
+#   headers
+RewriteRule ^css public/css/squall.css
+RewriteRule ^btpgrid public/css/bootstrap-grid.min.css
+RewriteRule ^btp public/css/bootstrap.min.css
+
+#   pages
+RewriteRule ^index index.php
+RewriteRule ^accueil view/accueil.php
+
+RewriteRule ^client view/client.php
+RewriteRule ^ad_client view/ad_client.php
+RewriteRule ^ad_compte view/ad_compte.php
+RewriteRule ^details-([0-9]+)$ view/details.php?idDet=$1
+RewriteRule ^modif_clt-([0-9]+)$ view/edit_client.php?idEdit=$1
+RewriteRule ^supp_clt-([0-9]+)$ view/controller/ctrl_client.php?idSup=$1
+
+RewriteRule ^comptes view/comptes.php
+RewriteRule ^modif_cpt-([0-9]+)$ edit_compte.php?idEdit=$1
+
+
+#  Controller
+RewriteRule ^connect controller/connecter.php
+RewriteRule ^ctrl_cpt-([0-9]+)$ controller/ctrl_compte.php?idSup=$1
+
+
+
+

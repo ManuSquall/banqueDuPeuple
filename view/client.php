@@ -3,6 +3,9 @@
 
 <?php
 session_start();
+if(!($_SESSION['login'])){
+    header("location: index");
+}
 
 require_once "../model/client_db.php";
 require_once "../model/admin_db.php";
@@ -18,9 +21,9 @@ $liste_client=getclients();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../public/css/squall.css">
-    <link rel="stylesheet" href="../public/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css">
+    <link rel="stylesheet" href="btpgrid">
+    <link rel="stylesheet" href="btp">
     <title>Banque du peuple</title>
 </head>
 
@@ -40,8 +43,8 @@ $liste_client=getclients();
                 <br>
                 <ul class="navbar-nav nav-justified">
                    
-                    <li class="nav-item"><a href="ad_client.php" class="btn btn-primary">AJOUTER CLIENT</a></li>
-                    <li class="nav-item"><a href="accueil.php" class="btn btn-primary">RETOUR</a></li>
+                    <li class="nav-item"><a href="ad_client" class="btn btn-primary">AJOUTER CLIENT</a></li>
+                    <li class="nav-item"><a href="accueil" class="btn btn-primary">RETOUR</a></li>
                     
                 </ul>
             </nav>
@@ -89,9 +92,9 @@ $liste_client=getclients();
                                 <td> <?=$c['adresse_client']?> </td>
                                 <td> <?=$c['numero_client']?> </td>
                                 <td>
-                                    <a href="details.php?idDet=<?=$c['id_client']?>" class="btn btn-sm btn-success text-white squall"><i class="fa fa-edit"></i>Compte(s)</a>
-                                    <a href="edit_client.php?idEdit=<?=$c['id_client']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
-                                    <a href="../controller/ctrl_client.php?idSup=<?=$c['id_client']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
+                                    <a href="details-<?=$c['id_client']?>" class="btn btn-sm btn-success text-white squall"><i class="fa fa-edit"></i>Compte(s)</a>
+                                    <a href="modif_clt-<?=$c['id_client']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
+                                    <a href="supp_clt-<?=$c['id_client']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
                                 </td>
                             </tr>
                             <?php } ?>

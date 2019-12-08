@@ -8,10 +8,12 @@ if(admin_connect($_POST['login'], $_POST['mdp'])){
 
     $_SESSION['login']=$_POST['login'];
     $_SESSION['mdp']=$_POST['mdp'];
-    header("location: ../view/accueil.php");
+    header("location: accueil");
 
 }else{
-    header("location: ../index.php");
+    session_unset();
+    session_destroy();
+    header("location:index");
 }
 
 ?>
