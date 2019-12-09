@@ -13,7 +13,7 @@ if (isset($_POST['save'])){
    echo addcompte($numero, $solde, $id_client);
 
 
-    header('location:../view/comptes.php');
+    header('location:comptes');
 }
 
 if (isset($_POST['update']) && isset($_POST['id'])){
@@ -24,7 +24,7 @@ if (isset($_POST['update']) && isset($_POST['id'])){
 
     updatecompte($id, $solde, $id_client);
 
-    header('location:../view/comptes.php');
+    header('location:comptes');
 }
 
 if(isset($_GET['idSup'])){
@@ -32,7 +32,7 @@ if(isset($_GET['idSup'])){
     $id=$_GET['idSup'];
     del_compte($id);
 
-    header('location:../view/comptes.php');
+    header('location:comptes');
 
 }
 

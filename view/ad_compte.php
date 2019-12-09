@@ -43,7 +43,7 @@ echo $num_compte;
                 <br>
                 <ul class="navbar-nav nav-justified">
 
-                    <li class="nav-item"><a href="comptes.php" class="btn btn-primary">RETOUR</a></li>
+                    <li class="nav-item"><a href="comptes" class="btn btn-primary">RETOUR</a></li>
 
                 </ul>
             </nav>
@@ -66,7 +66,7 @@ echo $num_compte;
                             <!-- ############################# -->
 
 
-                            <form action="../controller/ctrl_compte.php" method="post"
+                            <form action="ctrl_cpt" method="post"
                                 class="form-signin col-md-6 offset-2">
                                 <!-- ############################ -->
                                 <div class="form-group">

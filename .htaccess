@@ -22,15 +22,18 @@ RewriteRule ^ad_client view/ad_client.php
 RewriteRule ^ad_compte view/ad_compte.php
 RewriteRule ^details-([0-9]+)$ view/details.php?idDet=$1
 RewriteRule ^modif_clt-([0-9]+)$ view/edit_client.php?idEdit=$1
-RewriteRule ^supp_clt-([0-9]+)$ view/controller/ctrl_client.php?idSup=$1
+RewriteRule ^supp_clt-([0-9]+)$ controller/ctrl_client.php?idSup=$1
 
 RewriteRule ^comptes view/comptes.php
-RewriteRule ^modif_cpt-([0-9]+)$ edit_compte.php?idEdit=$1
+RewriteRule ^ad_compte view/ad_comptes.php
+RewriteRule ^modif_cpt-([0-9]+)$ view/edit_compte.php?idEdit=$1
 
 
 #  Controller
 RewriteRule ^connect controller/connecter.php
+RewriteRule ^ctrl_clt controller/ctrl_client.php
 RewriteRule ^ctrl_cpt-([0-9]+)$ controller/ctrl_compte.php?idSup=$1
+RewriteRule ^ctrl_cpt controller/ctrl_compte.php
 
 
 

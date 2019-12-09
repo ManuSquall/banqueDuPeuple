@@ -35,15 +35,15 @@ if ($_GET['idEdit']){
 
                 <h3>Bienvenue <?=$_SESSION['login']?></h3>
                 <br>
-                    <p> <b><u> Nombre de clients:</u> <?=nbr_client()[0]?></b></p>
+                <p> <b><u> Nombre de clients:</u> <?=nbr_client()[0]?></b></p>
                 <br>
                 <br>
-                    <p><b><u>Nombre de comptes:</u> <?=nbr_compte()[0]?></b></p>
+                <p><b><u>Nombre de comptes:</u> <?=nbr_compte()[0]?></b></p>
                 <br>
                 <ul class="navbar-nav nav-justified">
-                   
+
                     <li class="nav-item"><a href="client" class="btn btn-primary">RETOUR</a></li>
-                    
+
                 </ul>
             </nav>
 
@@ -57,52 +57,57 @@ if ($_GET['idEdit']){
                 <!-- ####################################################### -->
 
                 <div class="container bg-info">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
 
-                    <h3>Modifier un client </h3>
-                    <hr>
-                    <!-- ############################# -->
-
-
-                    <form action="../controller/ctrl_client.php" method="post" class="form-signin col-md-6 offset-2">
-            
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom" class="form-control" placeholder="<?=$old_client[1]?>" required>
-            </div>
-            <div class="form-group">
-                <label for="prenom">Prenom</label>
-                <input type="text" name="prenom" id="prenom" class="form-control" placeholder="<?=$old_client[2]?>" required>
-            </div>
-            <div class="form-group">
-                <label for="adresse">Adresse</label>
-                <input type="adresse" name="adresse" id="adresse" class="form-control" placeholder="<?=$old_client[3]?>" required>
-            </div>
-            <div class="form-group">
-                <label for="numero">Numero</label>
-                <input type="text" name="numero" id="numero" class="form-control" placeholder="<?=$old_client[4]?>" required>
-            </div>
-            <hr>
-            <div>
-                <button name="update" type="submit" class="btn btn-secondary">Modifier</button>
-                <!-- pour envoyer l'id -->
-                <input type="hidden" name="id" value="<?=$old_client[0]?>"/>
-                
-            </div>
-        </form>
-
-                    <hr>
+                            <h3>Modifier un client </h3>
+                            <hr>
+                            <!-- ############################# -->
 
 
+                            <form action="ctrl_clt" method="post"
+                                class="form-signin col-md-6 offset-2">
 
-                   
+                                <div class="form-group">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" name="nom" id="nom" class="form-control"
+                                        placeholder="<?=$old_client[1]?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prenom">Prenom</label>
+                                    <input type="text" name="prenom" id="prenom" class="form-control"
+                                        placeholder="<?=$old_client[2]?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adresse">Adresse</label>
+                                    <input type="adresse" name="adresse" id="adresse" class="form-control"
+                                        placeholder="<?=$old_client[3]?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numero">Numero</label>
+                                    <input type="text" name="numero" id="numero" class="form-control"
+                                        placeholder="<?=$old_client[4]?>" required>
+                                </div>
+                                <hr>
+                                <div>
+                                    <button name="update" type="submit" class="btn btn-secondary">Modifier</button>
+                                    <!-- pour envoyer l'id -->
+                                    <input type="hidden" name="id" value="<?=$old_client[0]?>" />
 
-                    <!-- ############################# -->
+                                </div>
+                            </form>
 
+                            <hr>
+
+
+
+
+
+                            <!-- ############################# -->
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
 
                 <!-- ####################################################### -->

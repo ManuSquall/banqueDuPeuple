@@ -59,7 +59,7 @@ if(!($_SESSION['login'])){
                     <!-- ############################# -->
 
 
-                    <form action="../controller/ctrl_client.php" method="post" class="form-signin col-md-6 offset-2">
+                    <form action="ctrl_clt" method="post" class="form-signin col-md-6 offset-2">
             
             <div class="form-group">
                 <label for="nom">Nom</label>

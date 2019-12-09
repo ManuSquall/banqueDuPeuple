@@ -44,8 +44,8 @@ $liste_compte=getcomptes();
                 <br>
                 <ul class="navbar-nav nav-justified">
                    
-                    <li class="nav-item"><a href="ad_compte.php" class="btn btn-primary">AJOUTER COMPTE</a></li>
-                    <li class="nav-item"><a href="accueil.php" class="btn btn-primary">RETOUR</a></li>
+                    <li class="nav-item"><a href="ad_compte" class="btn btn-primary">AJOUTER COMPTE</a></li>
+                    <li class="nav-item"><a href="accueil" class="btn btn-primary">RETOUR</a></li>
                     
                 </ul>
             </nav>
@@ -95,8 +95,8 @@ $liste_compte=getcomptes();
                                 <td> <?=(getclientbyid($c['id_client']))[1]?> </td>
                                 <td> <?=(getclientbyid($c['id_client']))[2]?> </td>
                                 <td>
-                                    <a href="edit_compte.php?idEdit=<?=$c['id_compte']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
-                                    <a href="../controller/ctrl_compte.php?idSup=<?=$c['id_compte']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
+                                    <a href="modif_cpt-<?=$c['id_compte']?>" class="btn btn-sm btn-warning text-white ml-2"><i class="fa fa-trash"></i>Modifier</a>
+                                    <a href="ctrl_cpt-<?=$c['id_compte']?>" class="btn btn-sm btn-danger text-white ml-2"><i class="fa fa-trash"></i>Supprimer</a>
                                 </td>
                             </tr>
                             <?php } ?>
