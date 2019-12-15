@@ -17,16 +17,17 @@ RewriteRule ^btp public/css/bootstrap.min.css
 RewriteRule ^index index.php
 RewriteRule ^accueil view/accueil.php
 
-RewriteRule ^client view/client.php
-RewriteRule ^ad_client view/ad_client.php
-RewriteRule ^ad_compte view/ad_compte.php
-RewriteRule ^details-([0-9]+)$ view/details.php?idDet=$1
-RewriteRule ^modif_clt-([0-9]+)$ view/edit_client.php?idEdit=$1
+#   client route
+RewriteRule ^client view/client/client.php
+RewriteRule ^ad_client view/client/ad_client.php
+RewriteRule ^details-([0-9]+)$ view/client/details.php?idDet=$1
+RewriteRule ^modif_clt-([0-9]+)$ view/client/edit_client.php?idEdit=$1
 RewriteRule ^supp_clt-([0-9]+)$ controller/ctrl_client.php?idSup=$1
 
-RewriteRule ^comptes view/comptes.php
-RewriteRule ^ad_compte view/ad_comptes.php
-RewriteRule ^modif_cpt-([0-9]+)$ view/edit_compte.php?idEdit=$1
+#   compte route
+RewriteRule ^comptes view/compte/comptes.php
+RewriteRule ^ad_compte view/compte/ad_compte.php
+RewriteRule ^modif_cpt-([0-9]+)$ view/compte/edit_compte.php?idEdit=$1
 
 
 #  Controller
