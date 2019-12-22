@@ -1,3 +1,13 @@
 factorisation de code
 responsivity
 improve UI
+
+
+
+body client_compte: dashboard-ecommerce
+
+footer in the main body div
+
+
+
+template used:https://colorlib.com/wp/
