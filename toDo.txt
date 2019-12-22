@@ -11,3 +11,7 @@ footer in the main body div
 
 
 template used:https://colorlib.com/wp/
+
+
+
+integrer les fonctions admin dans le navbar du header
