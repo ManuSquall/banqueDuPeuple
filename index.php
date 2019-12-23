@@ -1,50 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
+ 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="btpgrid">
-    <link rel="stylesheet" href="btp">
-    <link rel="stylesheet" href="css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Banque du peuple</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="public/template/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="public/template/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/template/libs/css/style.css">
+    <link rel="stylesheet" href="public/template/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
 </head>
 
-
 <body>
-
-<div class="jumbotron jumbotron-fluid bg-info">
-<nav class="navbar navbar-expand-sm bg-light">
-
-  <h2>Banque du peuple</h2>
-
-</nav>
-
-<form action="connect" method="post" class="form-signin col-md-4 offset-4 text-center">
-            <div class="form-group">
-                <img src="public/img/squall.png" width="100%" alt="" class="col-md-4">
-                <h1>Bienvenue</h1>
+    <!-- ============================================================== -->
+    <!-- login page  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a class="navbar-brand" href="">Banque du peuple</a><span class="splash-description">Entrez votre login et mot de passe.</span></div>
+            <div class="card-body">
+                <form action="connect" method="post" >
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="login" name="login" type="text" placeholder="Login" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="mdp" name="mdp" type="password" placeholder="Mot de passe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Se souvenir de moi</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Se connecter</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="login">Login</label>
-                <input type="text" name="login" id="login" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="mdp">Mot de passe</label>
-                <input type="password" name="mdp" id="mdp" class="form-control" required>
-            </div>
-            <hr>
-            <div>
-                <button type="submit" class="btn btn-primary">Se connecter</button>
-                <!-- <a href="view/inscription.php">
-                    <button type="button" class="btn btn-success">
-                        S'inscrire
-                    </button>
-                </a> -->
-            </div>
-        </form>
-</div>
+            
+            <!-- <div class="card-footer bg-white p-0  ">
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Create An Account</a></div>
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Forgot Password</a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+  
+    <!-- ============================================================== -->
+    <!-- end login page  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="public/template/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="public/template/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
-
+ 
 </html>
