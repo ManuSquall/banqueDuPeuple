@@ -1,7 +1,4 @@
-html, body{
-    height: 100%;
-    background-color: black;
-}
+
 
 
 .squall{
@@ -9,12 +6,11 @@ html, body{
 }
 
 .squall_main{
-    background-image: url('../img/img_bg_1.jpg');
+    /* background-image: url('../img/img_bg_1.jpg'); */
 }
 
 .main>div{
-    margin-left: 60px;
-    background-image: url("../img/img-2.jpg");
-    height: 500px;
+    /* background-image: url("../img/img-2.jpg"); */
+    /* height: 500px; */
     text-align: center;
 }

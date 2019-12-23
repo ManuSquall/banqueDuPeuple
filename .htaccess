@@ -1,4 +1,4 @@
-RewriteEngine on
+RewriteEngine On
 
 #  pour les test sans connexions
 # RewriteRule ^.{0}$ view/accueil.php
@@ -36,8 +36,9 @@ RewriteRule ^ctrl_clt controller/ctrl_client.php
 RewriteRule ^ctrl_cpt-([0-9]+)$ controller/ctrl_compte.php?idSup=$1
 RewriteRule ^ctrl_cpt controller/ctrl_compte.php
 
-#   Template
-# RewriteRule ^template public/template
+RewriteRule ^template$ public/template
+
+
 
 
 
