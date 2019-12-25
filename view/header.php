@@ -1,14 +1,17 @@
 <?php
 
-    // récupérer le dernier mot de l'url
-    $url = $_SERVER['REQUEST_URI']; 
-    $a = explode('/', $url);
-    $actu=$a[count($a)-1];
-    echo $actu;
-    echo '';
-    echo strlen($actu);
-    echo '';
-    echo strcmp($actu, "accueil");
+// récupérer le dernier mot de l'url
+$url = $_SERVER['REQUEST_URI']; 
+$a = explode('/', $url);
+$actu=$a[count($a)-1];
+
+
+    
+    // echo $actu;
+    // echo '';
+    // echo strlen($actu);
+    // echo '';
+    // echo strcmp($actu, "accueil");
     function getPublicPath($actu){
         if(strcmp($actu, "accueil")==0){
             echo"public/template";
@@ -113,13 +116,13 @@
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">Ajouter</a>
+                                            <a class="nav-link" href="ad_client">Ajouter</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">Modifier</a>
+                                            <a class="nav-link" href="client">Modifier</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">Supprimer</a>
+                                            <a class="nav-link" href="client">Supprimer</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -138,13 +141,13 @@
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">Ajouter</a>
+                                            <a class="nav-link" href="ad_compte">Ajouter</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">Modifier</a>
+                                            <a class="nav-link" href="comptes">Modifier</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">Supprimer</a>
+                                            <a class="nav-link" href="comptes">Supprimer</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -190,28 +193,5 @@
 
         <!-- ########################################################################### -->
 
-        <!-- ============================================================== -->
-                    <!-- pageheader  -->
-                    <!-- ============================================================== -->
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <?php
-                            if(strcmp($actu,"accueil")!=0){
-                                echo "<a href=\"accueil\" class=\"btn btn-primary\"> <i class=\"fas fa-arrow-left\"></i> </a>";
-                            } 
-                            ?>
-                            <div class="page-header">
-                               
-                                   
-                                <h2 class="pageheader-title " align="center">Accueil </h2>
-                                
-
-                            
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ============================================================== -->
-                    <!-- end pageheader  -->
-                    <!-- ============================================================== -->
+       
 

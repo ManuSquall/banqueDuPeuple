@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 session_start();
 require_once "../../model/admin_db.php";
@@ -10,105 +7,107 @@ if(!($_SESSION['login'])){
 
 ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="btpgrid">
-    <link rel="stylesheet" href="btp">
-    <link rel="stylesheet" href="css">
-    <title>Banque du peuple</title>
-</head>
-
-<body>
 
 
-    <div class="container-fluid h-100">
-        <div class="row h-100 ">
-            <nav class="col-md-2 col-sm-2 col-lg-2 nav bg-light justify-content-center">
 
-                <h3>Bienvenue <?=$_SESSION['login']?></h3>
-                <br>
-                    <p> <b><u> Nombre de clients:</u> <?=nbr_client()[0]?></b></p>
-                <br>
-                <br>
-                    <p><b><u>Nombre de comptes:</u> <?=nbr_compte()[0]?></b></p>
-                <br>
-                <ul class="navbar-nav nav-justified">
-                   
-                    <li class="nav-item"><a href="client.php" class="btn btn-primary">RETOUR</a></li>
-                    
-                </ul>
-            </nav>
+<!-- ============================================================== -->
+<!-- header -->
+<!-- ============================================================== -->
 
-            <div class="container-fluid col-md-10 col-sm-10 col-lg-10 squall_main">
-                <nav class="navbar navbar-expand-sm bg-light">
-
-                    <h2>Banque du peuple</h2>
-
-                </nav>
-                <br>
-                <!-- ####################################################### -->
-
-                <div class="container bg-info">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-
-                    <h3>Ajouter un client </h3>
-                    <hr>
-                    <!-- ############################# -->
+<?php include_once '../header.php'?>
+<!-- ============================================================== -->
+<!-- end header -->
+<!-- ============================================================== -->
 
 
-                    <form action="ctrl_clt" method="post" class="form-signin col-md-6 offset-2">
+
+
+<!-- ============================================================== -->
+<!-- pageheader  -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+        <a href="client" class="btn btn-primary"> <i class="fas fa-arrow-left"></i> </a>
+
+        <div class="page-header">
+
+
+            <h2 class="pageheader-title " align="center">Ajouter un client</h2>
+
+
+
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end pageheader  -->
+<!-- ============================================================== -->
+
+
+
+
+<!-- ############################################################################################## -->
+
+
+
+
+
+
+
+<div class="splash-container">
+        <div class="card ">
+            <div class="card-body">
+            <form action="ctrl_clt" method="post" class="needs-validation" >
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control" name="nom" id="nom"  required>
+                            
+                        </div>
+                        <br>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="prenom">Prenom</label>
+                            <input type="text" class="form-control" name="prenom" id="prenom"  required>
+                            
+                        </div>
+                        <br>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="adresse">Adresse</label>
+                            <input type="text" class="form-control" name="adresse" id="adresse"  required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="numero">Numéro</label>
+                            <input type="text" class="form-control" name="numero" id="numero"  required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        
+                    </div>
+                        <br>
+                        <br>
+                        
+                        
+                        
+                            <button name="save" class="btn btn-primary" type="submit">Ajouter</button>
+                </form>
+            </div>
             
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="prenom">Prenom</label>
-                <input type="text" name="prenom" id="prenom" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="adresse">Adresse</label>
-                <input type="adresse" name="adresse" id="adresse" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="numero">Numero</label>
-                <input type="text" name="numero" id="numero" class="form-control" required>
-            </div>
-            <hr>
-            <div>
-                <button name="save" type="submit" class="btn btn-secondary">AJOUTER</button>
-                
-            </div>
-        </form>
-
-                    <hr>
-
-
-
-                   
-
-                    <!-- ############################# -->
-
-                </div>
-            </div>
+            
         </div>
+    </div>
 
 
-                <!-- ####################################################### -->
-
-            </div>
-
-
-
-
-
-
-        </div>
-
-
-</body>
-
-</html>
+<!-- ============================================================== -->
+<!-- footer -->
+<!-- ============================================================== -->
+<?php include_once '../footer.php'?>
+<!-- ============================================================== -->
+<!-- end footer -->
+<!-- ============================================================== -->

@@ -29,10 +29,38 @@ $liste_compte=getcomptes();
 <!-- ============================================================== -->
 
 
+ <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <a href="accueil" class="btn btn-primary"> <i class="fas fa-arrow-left"></i> </a>
+
+                            <div class="page-header">
+                               
+                                   
+                                <h2 class="pageheader-title " align="center">Liste des comtpes </h2>
+                                
+
+                            
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+
+
+
+<!-- ##############################################################################" -->
+
+
+
 <!-- recent orders  -->
 <!-- ============================================================== -->
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-<a href="accueil" class="btn btn-primary"><i class="fas fa-user-plus"></i> Ajouter un client</a>
+<a href="ad_compte" class="btn btn-primary"><i class="fas fa-plus-square"></i></i> Ajouter un compte</a>
     <div class="card">
        
         <div class="card-body p-0">

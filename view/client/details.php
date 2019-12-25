@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 session_start();
 if(!($_SESSION['login'])){
@@ -25,68 +22,73 @@ if(isset($_GET['idDet'])){
 
 ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="btpgrid">
-    <link rel="stylesheet" href="btp">
-    <link rel="stylesheet" href="css">
-    <title>Banque du peuple</title>
-</head>
-
-<body>
 
 
-    <div class="container-fluid h-100">
-        <div class="row h-100 ">
-            <nav class="col-md-2 col-sm-2 col-lg-2 nav bg-light justify-content-center">
-
-                <h3>Bienvenue <?=$_SESSION['login']?></h3>
-                <br>
-                    <p> <b><u> Nombre de clients:</u> <?=nbr_client()[0]?></b></p>
-                <br>
-                <br>
-                    <p><b><u>Nombre de comptes:</u> <?=nbr_compte()[0]?></b></p>
-                <br>
-                <ul class="navbar-nav nav-justified">
-                   
-                    <li class="nav-item"><a href="ad_compte.php" class="btn btn-primary">AJOUTER COMPTE</a></li>
-                    <li class="nav-item"><a href="accueil" class="btn btn-primary">RETOUR</a></li>
-                    
-                </ul>
-            </nav>
-
-            <div class="container-fluid col-md-10 col-sm-10 col-lg-10 squall_main">
-                <nav class="navbar navbar-expand-sm bg-light">
-
-                    <h2>Banque du peuple</h2>
-
-                </nav>
-                <br>
-                <!-- ####################################################### -->
-
-                <div class="container bg-info">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-
-                    <h3>Liste des comptes de <?=$client['nom_client']?> <?=$client['prenom_client']?> </h3>
-                    <hr>
-                    <!-- ############################# -->
 
 
-                    <table class="table table-borderless">
-                        <thead class="thead-light">
+
+
+
+<!-- ============================================================== -->
+<!-- header -->
+<!-- ============================================================== -->
+
+<?php include_once '../header.php'?>
+<!-- ============================================================== -->
+<!-- end header -->
+<!-- ============================================================== -->
+
+
+ <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <a href="client" class="btn btn-primary"> <i class="fas fa-arrow-left"></i> </a>
+
+                            <div class="page-header">
+                               
+                                   
+                                <h2 class="pageheader-title " align="center">Liste des comptes de <?=$client['nom_client']?></h2>
+                                
+
+                            
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+
+
+
+
+<!-- ################################################################################"" -->
+
+
+
+<!-- recent orders  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+       
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="bg-light">
+                        <tr class="border-0">
                             <th>Numero</th>
                             <th>Solde</th>
                             <th>Nom Client</th>
                             <th>Prenom Client</th>
                             <th>Détails</th>
-                        </thead>
-                        <tbody>
-
-                        <!-- A afficher si aucun compte n'a été créé -->
-                        <?php if(count($liste_compte_client)==0) { ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- A afficher si aucun client n'a été créé -->
+                         <!-- A afficher si aucun compte n'a été créé -->
+                         <?php if(count($liste_compte_client)==0) { ?>
                             <tr>
                                 <td class="font-italic text-center" colspan="5">
                                     Aucun compte n'a été créé pour <?=$client['nom_client']?> <?=$client['prenom_client']?> !
@@ -107,35 +109,21 @@ if(isset($_GET['idDet'])){
                                 </td>
                             </tr>
                             <?php } ?>
-
-                        </tbody>
-                    </table>
-
-                    <hr>
-
-
-
-                   
-
-                    <!-- ############################# -->
-
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
-
-
-                <!-- ####################################################### -->
-
-            </div>
-
-
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end recent orders  -->
 
 
 
-
-        </div>
-
-
-</body>
-
-</html>
+<!-- ============================================================== -->
+<!-- footer -->
+<!-- ============================================================== -->
+<?php include_once '../footer.php'?>
+<!-- ============================================================== -->
+<!-- end footer -->
+<!-- ============================================================== -->

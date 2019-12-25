@@ -160,6 +160,107 @@
                             </div>
                             <!-- ============================================================== -->
                             <!-- end recent orders  -->
+<!-- ##################################################################################################################### -->
+
+
+
+
+
+<div class="splash-container">
+        <div class="card ">
+            <div class="card-body">
+                <form action="connect" method="post" >
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="login" name="login" type="text" placeholder="Login" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="mdp" name="mdp" type="password" placeholder="Mot de passe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Se souvenir de moi</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Se connecter</button>
+                </form>
+            </div>
+            
+            
+        </div>
+    </div>
+
+
+
+
+
+<!-- ##################################################################################################################### -->
+
+
+
+
+
+
+<div class="row">
+    <!-- ============================================================== -->
+    <!-- validation form -->
+    <!-- ============================================================== -->
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <div class="card-body">
+                <form action="ctrl_clt" method="post" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom"
+                                 required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="prenom">Prenom</label>
+                            <input type="text" class="form-control" name="prenom" id="prenom" placeholder="prenom"
+                                 required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="adresse">Adresse</label>
+                            <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse"
+                                 required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <label for="numero">Numéro</label>
+                            <input type="text" class="form-control" name="numero" id="numero" placeholder="numero"
+                                 required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        
+                    </div>
+                        <br>
+                        <br>
+                        <br>
+                        
+                        
+                        
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end validation form -->
+    <!-- ============================================================== -->
+</div>
+
+
+
 
 
 
