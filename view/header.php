@@ -1,9 +1,24 @@
 <?php
-session_start();
-require_once "../model/admin_db.php";
-if(!($_SESSION['login'])){
-    header("location: index");
-}
+
+    // récupérer le dernier mot de l'url
+    $url = $_SERVER['REQUEST_URI']; 
+    $a = explode('/', $url);
+    $actu=$a[count($a)-1];
+    echo $actu;
+    echo '';
+    echo strlen($actu);
+    echo '';
+    echo strcmp($actu, "accueil");
+    function getPublicPath($actu){
+        if(strcmp($actu, "accueil")==0){
+            echo"public/template";
+        }
+        else{
+            echo "public/template";
+        }
+    }
+    
+
 
 ?>
 
@@ -16,16 +31,16 @@ if(!($_SESSION['login'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="public/template/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="public/template/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="public/template/libs/css/style.css">
-    <link rel="stylesheet" href="public/template/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="public/template/vendor/charts/chartist-bundle/chartist.css">
-    <link rel="stylesheet" href="public/template/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="<?php getPublicPath($actu) ?>/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="<?php getPublicPath($actu) ?>/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php getPublicPath($actu) ?>/libs/css/style.css">
+    <link rel="stylesheet" href="<?php getPublicPath($actu) ?>/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<?php getPublicPath($actu) ?>/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="<?php getPublicPath($actu) ?>/vendor/charts/morris-bundle/morris.css">
     <link rel="stylesheet"
-        href="public/template/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="public/template/vendor/charts/c3charts/c3.css">
-    <link rel="stylesheet" href="public/template/vendor/fonts/flag-icon-css/flag-icon.min.css">
+        href="<?php getPublicPath($actu) ?>/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="<?php getPublicPath($actu) ?>/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="<?php getPublicPath($actu) ?>/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <!-- squall -->
     <link rel="stylesheet" href="public/css/squall.css">
     <title>Banque du peuple</title>
@@ -41,7 +56,7 @@ if(!($_SESSION['login'])){
         <!-- header -->
         <!-- ============================================================== -->
 
-<!-- ============================================================== -->
+        <!-- ============================================================== -->
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
@@ -161,3 +176,42 @@ if(!($_SESSION['login'])){
         <!-- ============================================================== -->
         <!-- end left sidebar -->
         <!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<div class="dashboard-wrapper">
+
+
+<div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+
+
+
+        <!-- ########################################################################### -->
+
+        <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <?php
+                            if(strcmp($actu,"accueil")!=0){
+                                echo "<a href=\"accueil\" class=\"btn btn-primary\"> <i class=\"fas fa-arrow-left\"></i> </a>";
+                            } 
+                            ?>
+                            <div class="page-header">
+                               
+                                   
+                                <h2 class="pageheader-title " align="center">Accueil </h2>
+                                
+
+                            
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+

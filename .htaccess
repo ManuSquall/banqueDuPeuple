@@ -36,7 +36,7 @@ RewriteRule ^ctrl_clt controller/ctrl_client.php
 RewriteRule ^ctrl_cpt-([0-9]+)$ controller/ctrl_compte.php?idSup=$1
 RewriteRule ^ctrl_cpt controller/ctrl_compte.php
 
-RewriteRule ^template$ public/template
+# RewriteRule ^template$ public/template
 
 
 
