@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <!-- menu item -->
+=======
+>>>>>>> a9b3da0297ca395b238d18f3ad872b3a3cea78c4
 <li class="nav-item ">
     <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2"
         aria-controls="submenu-2"><i class="fa fa-fw fa-wpforms"></i>Compte <span
